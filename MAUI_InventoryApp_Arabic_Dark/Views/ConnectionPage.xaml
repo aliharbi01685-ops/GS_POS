@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_InventoryApp_Arabic_Dark.Views.ConnectionPage"
+             FlowDirection="RightToLeft"
+             Title="إعداد الاتصال"
+             BackgroundColor="#121212">
+    <ScrollView>
+    <StackLayout Padding="20" Spacing="15">
+        <Label Text="أدخل بيانات السيرفر" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White"/>
+        <Frame CornerRadius="8" Padding="10" BackgroundColor="#1E1E1E">
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Image WidthRequest="30" HeightRequest="30" Source="icon_server.png"/>
+                <Entry x:Name="EntryServer" Placeholder="IP السيرفر (مثال: 192.168.1.5)" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="#BBBBBB"/>
+            </StackLayout>
+        </Frame>
+        <Frame CornerRadius="8" Padding="10" BackgroundColor="#1E1E1E">
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Image WidthRequest="30" HeightRequest="30" Source="icon_db.png"/>
+                <Entry x:Name="EntryDatabase" Placeholder="اسم قاعدة البيانات" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="#BBBBBB"/>
+            </StackLayout>
+        </Frame>
+        <Frame CornerRadius="8" Padding="10" BackgroundColor="#1E1E1E">
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Image WidthRequest="30" HeightRequest="30" Source="icon_user.png"/>
+                <Entry x:Name="EntryUser" Placeholder="اسم المستخدم" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="#BBBBBB"/>
+            </StackLayout>
+        </Frame>
+        <Frame CornerRadius="8" Padding="10" BackgroundColor="#1E1E1E">
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Image WidthRequest="30" HeightRequest="30" Source="icon_lock.png"/>
+                <Entry x:Name="EntryPassword" Placeholder="كلمة المرور" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="White" PlaceholderColor="#BBBBBB"/>
+            </StackLayout>
+        </Frame>
+
+        <Button x:Name="BtnSave" Text="💾 حفظ واختبار الاتصال" Clicked="BtnSave_Clicked" CornerRadius="10" BackgroundColor="#333333" TextColor="White"/>
+
+        <Label x:Name="LblStatus" Text="" HorizontalOptions="Center" IsVisible="False" TextColor="LightGreen"/>
+
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

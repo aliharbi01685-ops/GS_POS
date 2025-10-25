@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_InventoryApp_Arabic_Dark.MainPage"
+             FlowDirection="RightToLeft"
+             Title="جرد الخزينة"
+             BackgroundColor="#121212">
+    <StackLayout Padding="20" Spacing="15">
+        <Label Text="لوحة التحكم" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" TextColor="White"/>
+        <Button x:Name="BtnInventory" Text="📊 تفاصيل الجرد خلال فترة" Clicked="BtnInventory_Clicked" CornerRadius="8" BackgroundColor="#333333" TextColor="White"/>
+        <Button x:Name="BtnSales" Text="🏪 إجمالي المبيعات حسب الفرع" Clicked="BtnSales_Clicked" CornerRadius="8" BackgroundColor="#333333" TextColor="White"/>
+        <Button x:Name="BtnOpen" Text="💰 الحساب المفتوح (مفتوح)" Clicked="BtnOpen_Clicked" CornerRadius="8" BackgroundColor="#333333" TextColor="White"/>
+        <CollectionView x:Name="ResultsCollection" Margin="0,20,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" CornerRadius="8" BackgroundColor="#1E1E1E">
+                        <StackLayout>
+                            <Label Text="{Binding Title}" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="{Binding Subtitle}" TextColor="#CCCCCC"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
